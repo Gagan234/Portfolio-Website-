@@ -1,65 +1,44 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const splashScreen = document.getElementById('splash-screen');
-    const mainContent = document.getElementById('main-content');
-    const arrow = document.querySelector('#splash-screen .arrow');
-    const sections = document.querySelectorAll('section');
-
-    // Handle splash screen arrow click
-    arrow.addEventListener('click', () => {
-        splashScreen.style.opacity = '0'; // Fade out the splash screen
-        setTimeout(() => {
-            splashScreen.style.display = 'none'; // Hide the splash screen after fade-out
-            mainContent.classList.remove('hidden'); // Show the main content
-            mainContent.style.display = 'block'; // Ensure main content is visible
-            animateSections();
-        }, 500); // Match the CSS transition duration
-    });
-
-    // Animate sections sequentially
-    function animateSections() {
-        let delay = 0;
-        sections.forEach((section) => {
-            setTimeout(() => {
-                section.classList.add('visible');
-            }, delay);
-            delay += 1000; // Delay between sections
-        });
+// Smooth scroll to anchors
+const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+smoothScrollLinks.forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
     }
-
-    const options = { threshold: 0.1 };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-            }
-        });
-    }, options);
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+  });
 });
 
-document.getElementById('contact-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
+// Typewriter effect for hero intro (pure JS)
+const heroHeading = document.querySelector('.hero-text h1');
+const text = heroHeading.textContent;
+heroHeading.textContent = '';
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+let index = 0;
+function typeEffect() {
+  if (index < text.length) {
+    heroHeading.textContent += text.charAt(index);
+    index++;
+    setTimeout(typeEffect, 50);
+  }
+}
+typeEffect();
 
-    try {
-        // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_PUBLIC_KEY' with your EmailJS credentials
-        const response = await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-            name,
-            email,
-            message,
-        }, 'YOUR_PUBLIC_KEY');
+// Fade-in on scroll
+const observerOptions = {
+  threshold: 0.1
+};
 
-        alert('Message sent successfully!');
-        document.getElementById('contact-form').reset();
-    } catch (error) {
-        console.error('Failed to send message:', error);
-        alert('Failed to send message. Please try again later.');
+const fadeInObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+      observer.unobserve(entry.target);
     }
+  });
+}, observerOptions);
+
+document.querySelectorAll('section').forEach(section => {
+  fadeInObserver.observe(section);
 });

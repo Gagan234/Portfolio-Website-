@@ -1,133 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gagan Sapkota Portfolio</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gagan Sapkota Portfolio</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <body>
-    <!-- Splash Screen -->
-    <div id="splash-screen">
-        <h1>Gagan Sapkota</h1>
-        <p>Software Engineer | Web Developer</p>
-        <div class="arrow">
-            <i class="fas fa-arrow-down"></i>
-        </div>
+  <!-- Header -->
+  <header>
+    <h1>Gagan Sapkota</h1>
+    <p>Software Engineer | Web Developer</p>
+    <div class="social-icons">
+      <a href="https://github.com/Gagan234" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/gagan-s-816243247/" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
+  </header>
 
-    <!-- Main Content -->
-    <div id="main-content">
-        <header>
-            <div class="container">
-                <h1>Gagan Sapkota</h1>
-                <p>📞 516-534-1402 | ✉️ gagansapkota668@gmail.com</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/gagan-s-816243247/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/Gagan234" target="_blank"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </header>
-
-        <main>
-            <section id="education">
-                <h2>Education</h2>
-                <p><strong>Farmingdale State College</strong>, Farmingdale, NY</p>
-                <p>Bachelor of Science in Computer Science, Minor in Applied Mathematics</p>
-                <p>Expected Graduation: May 2025</p>
-            </section>
-
-            <section id="experience">
-                <h2>Experience</h2>
-
-                <div class="job">
-                    <h3>Software Engineer Intern</h3>
-                    <p><strong>Cowan Consulting</strong>, New York, NY</p>
-                    <p>Jan 2025 – Present</p>
-                    <ul>
-                        <li>Developed and optimized 3+ web apps using React.js, Node.js (Express.js), Firebase, and Stripe.</li>
-                        <li>Redesigned and debugged applications, fixing 100% of reported bugs.</li>
-                        <li>Created a hotel reservation system improving booking automation and reducing query times by 40%.</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <h3>Software Engineer Intern</h3>
-                    <p><strong>New York State D.S.S I.T</strong>, Garden City, NY</p>
-                    <p>June 2023 – Sept. 2024</p>
-                    <ul>
-                        <li>Supported 600+ employees, resolving issues across apps, Windows OS, and VDI.</li>
-                        <li>Managed SQL databases, improved integrity and operations.</li>
-                        <li>Configured and deployed Virtual Desktop Infrastructure (VDI) for seamless integration.</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <h3>Web Developer Intern</h3>
-                    <p><strong>Nassau County I.T</strong>, Mineola, NY</p>
-                    <p>June 2022 – Aug. 2022</p>
-                    <ul>
-                        <li>Enhanced functionality and design of the Nassau County website.</li>
-                        <li>Improved UX for county residents and site visitors.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="projects">
-                <h2>Projects</h2>
-
-                <div class="project">
-                    <h3>Moneta</h3>
-                    <p>Technologies: Vue.js, Spring Boot, GraphQL (Apollo), RAG, JWT</p>
-                    <ul>
-                        <li>Created a frontend/backend system with secure JWT auth and GraphQL integration.</li>
-                        <li>Utilized RAG for dynamic flashcard generation based on user-uploaded content.</li>
-                        <li>Built an interactive chatbot for real-time answers and personalized study experiences.</li>
-                    </ul>
-                </div>
-
-                <div class="project">
-                    <h3>Phantini</h3>
-                    <p>Technologies: React.js, Node.js, Express.js, MongoDB, JWT, bcrypt.js, Stripe</p>
-                    <ul>
-                        <li>Developed a web platform for luxury vehicle services.</li>
-                        <li>Implemented secure auth with JWT and bcrypt hashing.</li>
-                        <li>Built e-commerce functionality for purchasing vehicle services.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="skills">
-                <h2>Technical Skills</h2>
-                <p><strong>Languages:</strong> Java, Python, C, C++, C#, Ruby, Kotlin, Go, TypeScript, Swift, SQL, NoSQL, PostgreSQL</p>
-                <p><strong>Frameworks:</strong> React.js, Angular, Node.js, Vue, Spring Boot, Express.js</p>
-                <p><strong>Developer Tools:</strong> Git, GitHub, AWS, Microsoft Office, Linux</p>
-                <p><strong>Libraries & Databases:</strong> RESTful APIs, MongoDB, Firebase, Stripe, OpenAI API, GraphQL, Apollo, JWT, bcrypt.js, RAG (Retrieval-Augmented Generation)</p>
-            </section>
-
-            <section id="contact">
-                <h2>Contact Me</h2>
-                <form id="contact-form">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                    
-                    <button type="submit">Send</button>
-                </form>
-            </section>
-        </main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hi there! 👋 I'm Gagan</h1>
+      <p>A passionate Full Stack Developer with experience in building Web and Mobile applications using modern stacks like React, Vue, Node.js, Firebase, and more.</p>
+      <a href="#contact" class="btn">Contact Me</a>
+      <a href="Gagan_Resume.pdf" target="_blank" class="btn">See My Resume</a>
     </div>
+    <div class="hero-img">
+      <img src="images /developer-illustration.png" alt="Developer Illustration" />
+    </div>
+  </section>
 
-    <footer>
-        <p>© 2025 Gagan Sapkota. All rights reserved.</p>
-    </footer>
+  <!-- Education -->
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>Farmingdale State College</strong>, Farmingdale, NY</p>
+    <p>Bachelor of Science in Computer Science, Minor in Applied Mathematics</p>
+    <p>Expected Graduation: May 2025</p>
+  </section>
 
-    <script src="scripts/main.js"></script>
+  <!-- Experience -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <p><strong>Software Engineer Intern</strong> – Cowan Consulting (Jan 2025 – Present)</p>
+    <ul>
+      <li>Built and optimized web apps using React.js, Firebase, Stripe.</li>
+      <li>Redesigned applications, fixing all reported bugs.</li>
+      <li>Created a hotel booking system, reducing query time by 40%.</li>
+    </ul>
+    <p><strong>Software Engineer Intern</strong> – NY State D.S.S IT (June 2023 – Sep. 2024)</p>
+    <ul>
+      <li>Supported 600+ employees and maintained SQL databases.</li>
+      <li>Configured Virtual Desktop Infrastructure (VDI) setups.</li>
+    </ul>
+    <p><strong>Web Developer Intern</strong> – Nassau County IT (June – Aug 2022)</p>
+    <ul>
+      <li>Enhanced Nassau County website design and functionality.</li>
+    </ul>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <p><strong>Moneta</strong> – Vue.js, Spring Boot, GraphQL, RAG, JWT</p>
+    <ul>
+      <li>Built AI-driven flashcard generator with chatbot assistant.</li>
+    </ul>
+    <p><strong>Phantini</strong> – React.js, Node.js, MongoDB, JWT, Stripe</p>
+    <ul>
+      <li>Created a luxury vehicle service booking platform with e-commerce features.</li>
+    </ul>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <p><strong>Languages:</strong> Java, Python, C, C++, Go, Kotlin, Swift, TypeScript</p>
+    <p><strong>Frameworks:</strong> React.js, Vue, Spring Boot, Node.js, Express.js</p>
+    <p><strong>Tools:</strong> Git, GitHub, AWS, Linux, Microsoft Office</p>
+    <p><strong>Other:</strong> Firebase, MongoDB, Stripe, GraphQL, JWT, OpenAI API</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:gagansapkota668@gmail.com">gagansapkota668@gmail.com</a></p>
+    <p>Phone: 516-534-1402</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Gagan Sapkota. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts/main.js"></script>
 </body>
 </html>

@@ -1,195 +1,127 @@
-body {
-    font-family: 'Poppins', sans-serif; /* Fancier font */
+/* Reset and Base Styles */
+* {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #4A7BA7, #8FA3B8); /* Brighter Metallic Blue to Steel Gray gradient */
-    color: #000000; /* Black text for readability */
-}
-
-#splash-screen {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to right, #4A7BA7, #8FBCE6);
+    color: white;
+  }
+  
+  /* Hero Section */
+  .hero {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    height: 100vh;
-    background: linear-gradient(to bottom, #8FBCE6, #4A7BA7); /* Brighter Periwinkle Blue to Metallic Blue gradient */
-    color: #000000; /* Black text for splash screen */
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    transition: opacity 0.5s ease; /* Add fade-out transition */
-    position: relative; /* Ensure proper positioning for the arrow */
-}
-
-#splash-screen h1 {
-    font-size: 4rem; /* Larger font size for the name */
-    margin-bottom: 1rem;
-    color: #000000; /* Black text for the name */
-}
-
-#splash-screen p {
-    font-size: 1.5rem; /* Larger font size for the subtitle */
-}
-
-#splash-screen .arrow {
-    margin-top: 2rem;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #1A2639; /* Darker Navy Ink for the arrow */
-    animation: bounce 1s infinite;
-    position: absolute; /* Position the arrow independently */
-    bottom: 20px; /* Place the arrow at the bottom of the splash screen */
-    left: 50%; /* Center the arrow horizontally */
-    transform: translateX(-50%); /* Adjust for centering */
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.hidden {
-    display: none !important; /* Ensure hidden elements are not displayed */
-}
-
-#splash-screen.hidden {
-    opacity: 0; /* Fade out the splash screen */
-    pointer-events: none; /* Prevent interaction during fade-out */
-}
-
-#main-content {
-    display: none; /* Initially hide the main content */
-}
-
-header {
-    background: linear-gradient(to right, #4A7BA7, #8FBCE6); /* Brighter Metallic Blue to Periwinkle Blue gradient */
-    padding: 2rem;
-    text-align: center;
-    border-bottom: 2px solid #C0D4E4; /* Brighter Cool Cloud border */
-    color: #000000; /* Black text for header */
-}
-
-header h1 {
-    font-size: 3rem; /* Larger font size for the header name */
-    color: #000000; /* Black text for the header name */
-}
-
-header p {
-    font-size: 1.5rem; /* Larger font size for contact details */
-    color: #000000; /* Black text for contact details */
-}
-
-header .social-links a {
-    font-size: 2rem; /* Larger font size for social links */
-    color: #000000; /* Black text for social links */
-    margin: 0 0.5rem;
-    transition: color 0.3s ease;
-}
-
-header .social-links a:hover {
-    color: #000000; /* Black text on hover */
-}
-
-section {
-    padding: 2rem;
-    margin: 2rem auto;
-    background: linear-gradient(to bottom, #8FA3B8, #C0D4E4); /* Brighter Steel Gray to Cool Cloud gradient */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    max-width: 800px; /* Center content with a max width */
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    color: #000000; /* Black text for sections */
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h2 {
-    color: #000000; /* Black text for section headings */
-    font-size: 3rem; /* Larger font size for section headings */
-    margin-bottom: 1.5rem;
-    text-align: center;
-    text-shadow: 0 0 10px #7091E6; /* Subtle Periwinkle Blue glow */
-}
-
-section p, section ul, section li {
-    font-size: 1.5rem; /* Larger font size for section content */
-    color: #000000; /* Black text for section content */
-}
-
-footer {
-    background: linear-gradient(to bottom, #2A3A59, #4A7BA7); /* Brighter Navy Ink to Metallic Blue gradient */
-    color: #000000; /* Black text for footer */
-    text-align: center;
-    padding: 1.5rem;
-    border-top: 2px solid #8FBCE6; /* Brighter Periwinkle Blue border */
-}
-
-footer p {
-    font-size: 1.5rem; /* Larger font size for footer text */
-    color: #000000; /* Black text for footer */
-}
-
-#contact {
-    background: linear-gradient(to bottom, #8FA3B8, #C0D4E4); /* Brighter Steel Gray to Cool Cloud gradient */
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-}
-
-#contact h2 {
-    font-size: 3rem; /* Larger font size for contact heading */
-    color: #000000; /* Black text for contact heading */
-}
-
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    justify-content: center;
+    padding: 4rem 2rem;
+  }
+  
+  .hero-text {
+    flex: 1 1 400px;
     max-width: 600px;
-    margin: 0 auto;
-}
-
-#contact-form label {
-    font-size: 1.5rem; /* Larger font size for form labels */
-}
-
-#contact-form input,
-#contact-form textarea {
-    width: 100%;
     padding: 1rem;
-    border: 1px solid #3D52A0; /* Deep Steel Blue border */
-    border-radius: 5px;
-    background: #ADBBD4; /* Cool Cloud for inputs */
-    font-size: 1.5rem; /* Larger font size for input fields */
-    color: #000000; /* Black text for input fields */
-}
-
-#contact-form input:focus,
-#contact-form textarea:focus {
-    border-color: #7091E6; /* Periwinkle Blue border on focus */
-    outline: none;
-}
-
-#contact-form button {
-    background: #3D9CA8; /* Teal Accent background for button */
-    font-size: 1.5rem; /* Larger font size for button text */
-    color: #000000; /* Black text for buttons */
-    padding: 1rem;
-    border: none;
-    border-radius: 5px;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-text p {
     font-size: 1.2rem;
-    cursor: pointer;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-img {
+    flex: 1 1 400px;
+    text-align: center;
+  }
+  
+  .hero-img img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .wave {
+    display: inline-block;
+    animation: waveAnim 2s infinite;
+    transform-origin: 70% 70%;
+  }
+  
+  @keyframes waveAnim {
+    0%, 100% { transform: rotate(0deg); }
+    15% { transform: rotate(14deg); }
+    30% { transform: rotate(-8deg); }
+    40% { transform: rotate(14deg); }
+    50% { transform: rotate(-4deg); }
+    60% { transform: rotate(10deg); }
+    70% { transform: rotate(0deg); }
+  }
+  
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    background-color: #4A7BA7;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem;
+    text-decoration: none;
+    border-radius: 5px;
     transition: background 0.3s ease;
-}
-
-#contact-form button:hover {
-    background: #C5C6EC; /* Misty Lavender on hover */
-}
+  }
+  
+  .btn:hover {
+    background-color: #2A3A59;
+  }
+  
+  /* Sections */
+  section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #4A7BA7;
+  }
+  
+  ul {
+    list-style: disc inside;
+    padding-left: 1rem;
+  }
+  
+  /* Social Icons */
+  .social-icons a {
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #4A7BA7;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: #333;
+    background: #f1f1f1;
+  }
+  
